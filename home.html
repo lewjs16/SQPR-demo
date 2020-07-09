@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Style the header "SQPR LAB"*/
+        .header {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            text-align: center;
+            background: #99CCFF;
+            opacity: 0.75;
+            color: white;
+            font-size: 85%;
+            width: 100%; 
+            height: 7%; 
+            top: 0%;
+            overflow: auto; 
+        }
+
+        /* Style the navigation menu */
+        .navbar {
+            padding-top: 0.5%;
+            top: 3%; 
+            width: 100%;
+            height: auto; 
+            background-color: #99CCFF;
+            overflow: auto; 
+        }
+
+        /* Navigation links */
+        .navbar a {
+            padding-left: 1.5%; 
+            padding-right: 1.5%; 
+            color: white;
+            text-decoration: none;
+            font-size: 130%;
+            width: 33.33%; /* Four equal-width links.*/
+            height: auto; 
+            text-align: center; 
+        }
+
+        /* Add a background color on mouse-over */
+            .navbar a:hover {
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+        /* Style the current/active link */
+            .navbar a.active {
+                background-color: rgba(255, 244, 117,1);
+                color: rgba(48, 48, 45,1);
+            }
+
+
+        /*Recent Highlights image Boarder: contains blog posts*/
+        .image-wrapper {
+            position: relative; 
+            text-align: center;
+            /*padding-top:5%;*/
+            top: 11%; 
+            height: 25%; 
+            width:auto;
+        }
+
+        /*Recent Highlights image Boarder*/
+        #blog-background {
+            display: inline-block;
+            border: 4px solid #f1f1f1;
+            margin-left: auto;
+            margin-right: auto;
+            height: 25%;
+            width: 99%; /*this is inside of div class blog*/
+            vertical-align: bottom;
+        }
+
+        #logo{
+            position: absolute;
+            top: 1%;
+            left: 1%; 
+            width: 6%;
+            height: 10%;  
+            overflow: auto; 
+        }
+
+        /*Style Previous & Next Button*/
+        b {
+            display: inline-block;
+            text-decoration: none;
+            padding-top: 0.5%;
+            padding-bottom: 0.5%;
+            height: auto;
+            width: 2.5%;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            color: black;
+        }
+
+            b:hover {
+                background-color: #ddd;
+                border-radius: 50%;
+                color: black;
+            }
+
+        .previous {
+            position: absolute; 
+            top: 125% ;
+            left: 16%; 
+        }
+
+        .next {
+            position: absolute;
+            top: 125%;
+            left: 81%;
+        }
+
+
+        /*Style Blogs*/
+        .blog {
+            position: relative;
+            display: inline-block;
+            width: 60%;
+            height: auto; 
+            text-align: center;
+            top: 0%; /*inside of something*/
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 16%;
+            left: 21%;
+            font-size: 160%;
+            font-weight: bolder;
+            width: 20%; 
+            height: 5%; 
+            overflow: auto; 
+        }
+
+      
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 145%;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255,0.6);
+            padding-left: 30%;
+            padding-right: 30%;
+            padding-top: 15%;
+            padding-bottom: 15%;
+            width: 30%;
+            height: 17%; 
+            overflow: auto; 
+        }
+    </style>
+</head>
+
+<body>
+    <!--Top of Page-->
+    <div class="header">
+        <h1>SPQR LAB</h1>
+
+        <div class="navbar">
+            <a href="#">HOME</a>
+            <a href="#">EDUCATION</a>
+            <a class="active" href="#">BLOGS</a>
+            <a href="#">PUBLICATIONS</a>
+            <a href="#">RESEARCH</a>
+            <a href="#">SUPPORT</a>
+            <a href="#">TEAM</a>
+            <a href="#">MEDIA</a>
+            <a href="#">CONTACT</a>
+        </div>
+    </div>
+
+    <img src="images/umich_logo.png" id="logo" />
+    <div class="top-left">RECENT HIGHLIGHTS</div>
+
+    <div class="image-wrapper" , display: inline-table>
+        <b href="#" class="previous">&#8249;  </b>
+        <div class="blog" , display: inline-table>
+            <img src="images/blueprint-background.jpg" id="blog-background">
+
+            <div class="centered">#ShutDownSTEM: A reflection on racial inequities in STEM</div>
+        </div>
+        <b href="#" class="next">&#8250;</b>
+    </div>
+
+
+
+
+</body>
+
+</html>
