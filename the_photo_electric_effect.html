@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.19.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>The Photoelectric Effect - Benjamin Andrew Cyr</title>
+<meta name="description" content="Some of my recent works on LiDAR1 and Light Commands2 have shown that different sensors are vulnerable to light-based signal injection. By modulating a laser with an external signal, whether that be a digital trigger sequence or an analog signal to change the intensity, these sensors can output data that does not represent the environment. In some systems, this can have consequences that can cause system failure or user exploitation. I’m seeking to prevent attacks like these, and to accomplish this, I’ll be looking in depth at the physics of these sensors. I will start by looking at the Photoelectric Effect.                 Y. Cao et al., “Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving,” in Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, London, United Kingdom, Nov. 2019, pp. 2267–2281, doi: 10.1145/3319535.3339815. &#8617;                 https://lightcommands.com/ &#8617;          ">
+
+
+  <meta name="author" content="Benjamin Andrew Cyr">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Benjamin Andrew Cyr">
+<meta property="og:title" content="The Photoelectric Effect">
+<meta property="og:url" content="https://benjamin-cyr.com/research/Photoelectric-Effect/">
+
+
+  <meta property="og:description" content="Some of my recent works on LiDAR1 and Light Commands2 have shown that different sensors are vulnerable to light-based signal injection. By modulating a laser with an external signal, whether that be a digital trigger sequence or an analog signal to change the intensity, these sensors can output data that does not represent the environment. In some systems, this can have consequences that can cause system failure or user exploitation. I’m seeking to prevent attacks like these, and to accomplish this, I’ll be looking in depth at the physics of these sensors. I will start by looking at the Photoelectric Effect.                 Y. Cao et al., “Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving,” in Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, London, United Kingdom, Nov. 2019, pp. 2267–2281, doi: 10.1145/3319535.3339815. &#8617;                 https://lightcommands.com/ &#8617;          ">
+
+  <meta property="article:published_time" content="2020-04-26T00:00:00+00:00">
+
+
+<link rel="canonical" href="https://benjamin-cyr.com/research/Photoelectric-Effect/">
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Benjamin Andrew Cyr",
+      "url": "https://benjamin-cyr.com/"
+    
+  }
+</script>
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Benjamin Andrew Cyr Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <div class="initial-content">
+      
+<div id="main" role="main">
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The Photoelectric Effect">
+    <meta itemprop="description" content="Some of my recent works on LiDAR1 and Light Commands2 have shown that different sensors are vulnerable to light-based signal injection. By modulating a laser with an external signal, whether that be a digital trigger sequence or an analog signal to change the intensity, these sensors can output data that does not represent the environment. In some systems, this can have consequences that can cause system failure or user exploitation. I’m seeking to prevent attacks like these, and to accomplish this, I’ll be looking in depth at the physics of these sensors. I will start by looking at the Photoelectric Effect.            Y. Cao et al., “Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving,” in Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, London, United Kingdom, Nov. 2019, pp. 2267–2281, doi: 10.1145/3319535.3339815. &#8617;              https://lightcommands.com/ &#8617;      ">
+    <meta itemprop="datePublished" content="2020-04-26T00:00:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">The Photoelectric Effect
+</h1>
+          
+          <p class="page__meta">
+              <i class="far fa-clock" aria-hidden="true"></i>
+
+              3 minute read,
+              By: Benjamin Andrew Cyr
+
+          </p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Some of my recent works on LiDAR<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and Light Commands<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> have shown that different sensors are vulnerable to light-based signal injection. By modulating a laser with an external signal, whether that be a digital trigger sequence or an analog signal to change the intensity, these sensors can output data that does not represent the environment. In some systems, this can have consequences that can cause system failure or user exploitation. I’m seeking to prevent attacks like these, and to accomplish this, I’ll be looking in depth at the physics of these sensors. I will start by looking at the Photoelectric Effect.</p>
+
+<h2 id="the-photoelectric-effect">The Photoelectric Effect</h2>
+
+<p>The photoelectric effect is a “phenomenon in which electrically charged particles are released from or within a material when it absorbs electromagnetic radiation”<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>.</p>
+
+<h3 id="the-history">The History</h3>
+<p>The effect was discovered in 1887 by Heinrich Rudolf Hertz and Wilhelm Hallwachs when they noticed that when ultraviolet light changed the voltage when sparks occurred between two metal electrodes. Further study was performed by Philipp Lenard in 1902 where it was linked to the negatively charged electrons, and the energy of the electrons increased with the color (frequency) of the light. This was surprising, as Maxwell’s wave model of light predicted that the electron energy would increase with intensity, not frequency. In 1905, Albert Einstein presented his theories on the Photoelectric Effect in one of his papers<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>, which was heavily influenced by the idea of “light quanta” or photons from Max Planck’s 1901 work<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>. Since the photoelectric effect could not fit into any of the previous theories of light, it helped support the modern theory of the wave-particle duality of light.</p>
+
+<h3 id="the-math">The Math</h3>
+<p>In Einstein’s paper, he presented one of the fundamental equations of the photoelectric effect. The maximum kinetic energy <script type="math/tex">K_{max}</script> of an ejected electron is</p>
+
+<script type="math/tex; mode=display">K_{max} = hf - \varphi</script>
+
+<p>where <script type="math/tex">h</script> is Planck’s constant (<script type="math/tex">6.626{\times}10^{-34} J{\cdot}s</script>), <script type="math/tex">f</script> is the frequency of the injected light (Hz), and <script type="math/tex">\varphi</script> is the work function of the material (J). Every material has a different work function, as it corresponds to the amount of energy it takes to free an electron from the atom. The work function is affected by crystalline structure and temperature, but for most cases it can be considered a constant. This equation is important because it shows that the photoelectric effect will not occur unless the incident light is at a high enough energy (frequency) to overcome the work function. The minimum frequency is called the threshold frequency, and is denoted as <script type="math/tex">f_0</script>.</p>
+
+<p>So let’s just take the case of silicon. From the experimental results in the work by Alexander Novikov<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> the work function (<script type="math/tex">\varphi</script>) of doped silicon is ~5eV for p-type silicon and ~4.5eV for n-type silicon (an electronvolt is equal to ~<script type="math/tex">1.602{\times}10^{-19} J</script>, so less energy is needed for the n-type silicon). So the minimum threshold frequency of light would need to be</p>
+
+<script type="math/tex; mode=display">f_0 = \frac{\varphi}{h}</script>
+
+<script type="math/tex; mode=display">f_0 = \frac{4.5eV * 1.602{\times}10^{-19}J/eV}{6.626{\times}10^{-34} J{\cdot}s}</script>
+
+<script type="math/tex; mode=display">f_0 \approx 1088 THz</script>
+
+<p>This makes <script type="math/tex">f_0</script> an ultraviolet frequency, with a wavelength of</p>
+
+<script type="math/tex; mode=display">\lambda = \frac{c}{f_0} \approx 275.5 nm</script>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In order to the the photoelectric effect in silicon, ultraviolet radiation or higher is necessary. Since most of the experiments on light-based signal injection have been performed with infrared or visible light, this makes the photoelectric effect an unlikely candidate for the phenomenon we are seeing, as this light does not have enough energy to free electrons from the atomic bands. Yet, there is another effect that shows more promise, where the photon energy does not need to be as high: the photovoltaic effect. I’ll be investigating this physical phenomenon next.</p>
+
+<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Y. Cao et al., “Adversarial Sensor Attack on LiDAR-based Perception in Autonomous Driving,” in Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security, London, United Kingdom, Nov. 2019, pp. 2267–2281, doi: 10.1145/3319535.3339815. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="https://lightcommands.com/" target="_blank">https://lightcommands.com/</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>“Photoelectric effect,” Encyclopedia Britannica, Jan. 19, 2018. https://www.britannica.com/science/photoelectric-effect (accessed May 08, 2020). <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>A. Einstein, “On a Heuristic Point of View about the Creation and Conversion of Light,” in The Old Quantum Theory, Elsevier, 1967, pp. 91–107. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>M. Planck, “Ueber das Gesetz der Energieverteilung im Normalspectrum,” Annalen der Physik, vol. 309, no. 3, pp. 553–563, 1901, doi: 10.1002/andp.19013090310. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>A. Novikov, “Experimental measurement of work function in doped silicon surfaces,” Solid-State Electronics, vol. 54, no. 1, pp. 8–13, Jan. 2010, doi: 10.1016/j.sse.2009.09.005. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+      </section>
+
+    </div>
+
+    
+  </article>
+  
+</div>
+
+    </div>
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+  </body>
+</html>
