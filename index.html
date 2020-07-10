@@ -187,11 +187,12 @@
 
         /* Modal Content */
         .modal-content {
+            padding:3%;
             background-color: #fefefe;
             margin: auto;
-            padding: 5%;
             border: 1px solid #888;
             width: 80%;
+            height:100%;
         }
 
         /* The Close Button */
@@ -223,6 +224,11 @@
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
+        }
+
+        #modal_0, #modal_1, #modal_2{
+            height:100%;
+            width:100%;
         }
     </style>
 </head>
@@ -299,7 +305,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span onclick="close_blog()"class="close 0">&times;</span>
-            <embed src="oakland.html" width="800" height="2100" />
+            <embed id="modal_0" src="oakland.html"/>
 
         </div>
     </div>
@@ -308,7 +314,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span onclick="close_blog()"class="close 1">&times;</span>
-            <embed src="shutdown.html" width="800" height="2100" />
+            <embed id="modal_1" src="shutdown.html"  />
 
         </div>
     </div>
@@ -317,7 +323,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span onclick="close_blog()" class="close 2">&times;</span>
-            <embed src="photoelectric.html" width="800" height="2100" />
+            <embed id="modal_2" src="photoelectric.html" />
 
         </div>
     </div>
