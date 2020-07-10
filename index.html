@@ -15,6 +15,7 @@
 
         /* Style the header "SQPR LAB"*/
         .header {
+            font-family: Arial, Helvetica, sans-serif;
             padding-top: 1%;
             padding-bottom: 1%;
             text-align: center;
@@ -30,6 +31,7 @@
 
         /* Style the navigation menu */
         .navbar {
+            font-family: Arial, Helvetica, sans-serif;
             padding-top: 0.5%;
             top: 3%;
             width: 100%;
@@ -135,6 +137,7 @@
 
         /* Top left text */
         .top-left {
+            font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             width: 20%;
             height: 5%;
@@ -149,13 +152,14 @@
 
         /* Centered text */
         .centered {
+            font-family: Arial, Helvetica, sans-serif;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 1.7vw;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255,0.6);
+            font-weight:600;
+            background-color: rgba(255, 255, 255,0.70);
             padding-left: 30%;
             padding-right: 30%;
             padding-top: 15%;
@@ -194,7 +198,7 @@
         .close {
             color: #aaaaaa;
             float: right;
-            font-size: 2vw;
+            font-size: 3vw;
             font-weight: bold;
         }
 
@@ -204,6 +208,22 @@
                 text-decoration: none;
                 cursor: pointer;
             }
+
+
+        #myBtn {
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: rgba(255,255,255,1);
+            border-color: black;
+            color: black;
+            padding-top:1%; 
+            padding-bottom: 1%; 
+            padding-left: 2%; 
+            padding-right:2%;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -234,9 +254,13 @@
         <div class="blog" , display: inline-table>
             <img src="images/blueprint-background.jpg" id="blog-background">
 
-            <div class="centered" id="title-text">#ShutDownSTEM: A reflection on racial inequities in STEM</div>
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn" >Open Modal</button>
+            <div class="centered" >
+                <p id="title-text">#ShutDownSTEM: A reflection on racial inequities in STEM</pid="title-text">
+                <!-- Trigger/Open The Modal -->
+                <p></p>
+                <p></p>
+                <button id="myBtn">Click to read</button>
+            </div>
         </div>
         <b onclick="next_blog()" href="#" class="next">&#8250;</b>
     </div>
@@ -249,10 +273,13 @@
             "#ShutDownSTEM: A reflection on racial inequities in STEM",
             "The Photoelectric Effect"];
 
+        blog_html = ["oakland.html", "shutdown.html","photoelectric.html"]
+
         function prev_blog() {
             if (counter > 0) { counter = counter - 1; }
 
             document.getElementById("title-text").textContent = blog_titles[counter];
+            
         }
 
         function next_blog() {
@@ -260,6 +287,7 @@
                 counter = counter + 1;
             }
             document.getElementById("title-text").textContent = blog_titles[counter];
+
         }
 
     </script>
@@ -272,10 +300,12 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <embed src="the_photo_electric_effect.html" width="800" height="2100" />
-        </div>
+            <div id="obj"> 
+                <embed  src="shutdown.html" width="800" height="2100" />
 
-    </div>
+            </div>
+
+        </div>
 
     <script>
         // Get the modal
@@ -289,6 +319,8 @@
 
         // When the user clicks the button, open the modal
         btn.onclick = function () {
+            document.getElementById("obj").remove();
+
             modal.style.display = "block";
         }
 
