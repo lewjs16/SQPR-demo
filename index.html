@@ -195,7 +195,7 @@
         }
 
         /* The Close Button */
-        .close {
+        .close{
             color: #aaaaaa;
             float: right;
             font-size: 3vw;
@@ -254,9 +254,10 @@
         <div class="blog" , display: inline-table>
             <img src="images/blueprint-background.jpg" id="blog-background">
 
-            <div class="centered" >
-                <p id="title-text">#ShutDownSTEM: A reflection on racial inequities in STEM</pid="title-text">
-                <!-- Trigger/Open The Modal -->
+            <div class="centered">
+                <p id="title-text">
+                    #ShutDownSTEM: A reflection on racial inequities in STEM</p>
+                    <!-- Trigger/Open The Modal -->
                 <p></p>
                 <p></p>
                 <button id="myBtn">Click to read</button>
@@ -265,7 +266,7 @@
         <b onclick="next_blog()" href="#" class="next">&#8250;</b>
     </div>
 
-    
+
 
     <script>
         var counter = 1;
@@ -273,13 +274,13 @@
             "#ShutDownSTEM: A reflection on racial inequities in STEM",
             "The Photoelectric Effect"];
 
-        blog_html = ["oakland.html", "shutdown.html","photoelectric.html"]
+        blog_html = ["oakland.html", "shutdown.html", "photoelectric.html"]
 
         function prev_blog() {
             if (counter > 0) { counter = counter - 1; }
 
             document.getElementById("title-text").textContent = blog_titles[counter];
-            
+
         }
 
         function next_blog() {
@@ -293,39 +294,48 @@
     </script>
 
 
-
     <!-- The Modal -->
-    <div id="myModal" class="modal">
-
+    <div id="blog0" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="obj"> 
-                <embed  src="shutdown.html" width="800" height="2100" />
-
-            </div>
+            <span onclick="close_blog()"class="close 0">&times;</span>
+            <embed src="oakland.html" width="800" height="2100" />
 
         </div>
+    </div>
+
+    <div id="blog1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="close_blog()"class="close 1">&times;</span>
+            <embed src="shutdown.html" width="800" height="2100" />
+
+        </div>
+    </div>
+
+    <div id="blog2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="close_blog()" class="close 2">&times;</span>
+            <embed src="photoelectric.html" width="800" height="2100" />
+
+        </div>
+    </div>
 
     <script>
         // Get the modal
-        var modal = document.getElementById("myModal");
-
+        var modal = document.getElementById("blog1");
+       
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
         // When the user clicks the button, open the modal
         btn.onclick = function () {
-            document.getElementById("obj").remove();
-
+            modal = document.getElementById("blog" + counter);
             modal.style.display = "block";
         }
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
+        function close_blog(){
             modal.style.display = "none";
         }
 
