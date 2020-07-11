@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
 
+<head>
     <style>
         * {
             margin: 0;
@@ -157,9 +157,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.7vw;
-            font-weight:600;
-            background-color: rgba(255, 255, 255,0.70);
+            font-weight: 600;
+            background-color: rgba(241, 241, 241,0.80);
             padding-left: 30%;
             padding-right: 30%;
             padding-top: 15%;
@@ -167,6 +166,13 @@
             width: 30%;
             height: 17%;
             overflow: auto;
+        }
+
+        #title-text {
+            width: 100%;
+            height: 100%;
+            font-size: 1.32vw;
+            margin: 0;
         }
 
 
@@ -187,16 +193,16 @@
 
         /* Modal Content */
         .modal-content {
-            padding:3%;
+            padding: 3%;
             background-color: #fefefe;
             margin: auto;
             border: 1px solid #888;
             width: 80%;
-            height:100%;
+            height: 100%;
         }
 
         /* The Close Button */
-        .close{
+        .close {
             color: #aaaaaa;
             float: right;
             font-size: 3vw;
@@ -212,23 +218,28 @@
 
 
         #myBtn {
-            font-family:Arial, Helvetica, sans-serif;
-            background-color: rgba(255,255,255,1);
-            border-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            background-color: rgba(255,255,255,0);
+            border-color: lightgrey;
+            border-bottom-width: thin;
+            border-top-width: thin;
+            border-left-width: thin;
+            border-right-width: thin;
             color: black;
-            padding-top:1%; 
-            padding-bottom: 1%; 
-            padding-left: 2%; 
-            padding-right:2%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            padding-left: 2%;
+            padding-right: 2%;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
+            font-size: 1.1vw;
         }
 
-        #modal_0, #modal_1, #modal_2{
-            height:100%;
-            width:100%;
+        #modal_0, #modal_1, #modal_2 {
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
@@ -260,12 +271,14 @@
         <div class="blog" , display: inline-table>
             <img src="images/blueprint-background.jpg" id="blog-background">
 
-            <div class="centered">
+            <div class="centered" id="parent">
                 <p id="title-text">
-                    #ShutDownSTEM: A reflection on racial inequities in STEM</p>
-                    <!-- Trigger/Open The Modal -->
+                    #ShutDownSTEM: A reflection on racial inequities in STEM
+                </p>
+
                 <p></p>
                 <p></p>
+                <!-- Trigger/Open The Modal -->
                 <button id="myBtn">Click to read</button>
             </div>
         </div>
@@ -285,7 +298,18 @@
         function prev_blog() {
             if (counter > 0) { counter = counter - 1; }
 
+            document.getElementById("title-text").style.opacity = 0;
+
             document.getElementById("title-text").textContent = blog_titles[counter];
+            var i = 0;
+            var k = window.setInterval(function () {
+                if (i > 20) {
+                    clearInterval(k);
+                } else {
+                    document.getElementById("title-text").style.opacity= i / 20;
+                    i++;
+                }
+            }, 60);
 
         }
 
@@ -293,7 +317,19 @@
             if (counter < 2) {
                 counter = counter + 1;
             }
+
+            document.getElementById("title-text").style.opacity = 0;
+
             document.getElementById("title-text").textContent = blog_titles[counter];
+            var i = 0;
+            var k = window.setInterval(function () {
+                if (i > 20) {
+                    clearInterval(k);
+                } else {
+                    document.getElementById("title-text").style.opacity = i / 20;
+                    i++;
+                }
+            }, 60);
 
         }
 
