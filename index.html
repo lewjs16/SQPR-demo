@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -78,13 +79,14 @@
         /*-----------------------------------------------------------------------------------------*/
         /*Recent Highlights image Boarder: contains blog posts*/
         .image-wrapper {
-            position: relative;
+            position: absolute;
             text-align: center;
-            top: 42%;
-            left:-2%;
-            height: auto;
+            align-content: center;
+            align-items: center;
+            top: 27%;
+            left: -2%;
+            height: 65%;
             width: 100%;
-            
         }
 
         /*Recent Highlights image Boarder*/
@@ -92,24 +94,23 @@
             display: inline-block;
             height: auto;
             width: 99%; /*this is inside of div class blog*/
-
         }
 
             .smoother img {
                 position: absolute;
-                text-align:center;
-                top: 25%;
+                text-align: center;
+                top: 27%;
                 z-index: -1;
                 border: 4px solid #f1f1f1;
-                left:18%;
-                height: 65%;
+                left: 18%;
+                height: 31.5vw;
                 width: 65%;
-                this is inside of div class blog -webkit-animation-name: fade;
+                -webkit-animation-name: fade;
                 -webkit-animation-iteration-count: infinite;
-                -webkit-animation-duration: 15s;
+                -webkit-animation-duration: 8s;
                 animation-name: fade;
                 animation-iteration-count: infinite;
-                animation-duration: 15s;
+                animation-duration: 8s;
             }
 
         @-webkit-keyframes fade {
@@ -158,12 +159,10 @@
 
         #f2 {
             -webkit-animation-delay: -4s;
-            
         }
 
         #f3 {
             -webkit-animation-delay: -2s;
-           
         }
 
         /*Style Previous & Next Button*/
@@ -189,26 +188,37 @@
             position: absolute;
             box-shadow: -1px 1px #878686, -0.5px 0.5px #878686, -0.2px 0.2px #878686;
             transition: background-color 0.5s ease;
-            top: 5%;
-            left: 16%;
+            top: 15vw;
+            left: 17%;
+            /*transform: translate(0%,50%);*/
         }
 
         .next {
             position: absolute;
             box-shadow: -1px 1px #878686, -0.5px 0.5px #878686, -0.2px 0.2px #878686;
             transition: background-color 0.5s ease;
-            top: 5%;
-            left: 87%;
+            top:15vw;
+            /*top: 50%;*/
+            left: 86%;
+            /*transform: translate(0%,50%);*/
         }
         /*-----------------------------------------------------------------------------------------*/
         /*Style Blogs*/
         .blog {
             position: relative;
+            top: 3vw;
+            left: 2.5%;
             display: inline-block;
-            /*text-align: center;*/
-            width: 60%;
-            height: auto;
-            top: 0%; /*inside of something*/
+            text-align: center;
+            vertical-align: middle;
+            width: 55%;
+            height: 25vw;
+            /* border: 4px solid #555;*/
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            background-color: rgba(241, 241, 241,0.80);
+            box-shadow: -3px 3px lightgrey, -2px 2px lightgrey, -1px 1px lightgrey;
+            overflow: hidden;
         }
 
         /* Top left text */
@@ -224,28 +234,40 @@
             left: 21%;
         }
 
-        /* Centered text */
         .centered {
-            display:inline-block;
-            position:relative;
-            transform: translate(-50%, -50%);
+            position: fixed;
+            text-align: center;
+            padding-top:10vw;
+           /* top: 50%;
+            left:50%;*/
+            width:55%;
+            height:auto;
+           /* transform: translate(-49%,31%);*/
+           /* border: 4px solid red;*/
+        }
+
+        /* Centered text */
+        /*.centered {*/
+            /*display: inline-block;*/
+            /*position: relative;
+            margin:0;
             font-family: Arial, Helvetica, sans-serif;
-            text-align:center;
+            text-align: center;
             font-weight: 600;
             background-color: rgba(241, 241, 241,0.80);
-            top: 50%;
-            left: 50%;
             padding-left: 30%;
             padding-right: 30%;
             padding-top: 15%;
             padding-bottom: 15%;
-            width: 30%;
-            height: 17%;
+            width: 55%;
+            height: auto;
             box-shadow: -3px 3px lightgrey, -2px 2px lightgrey, -1px 1px lightgrey;
             overflow: hidden;
-        }
+        }*/
 
         #title-text {
+            position:relative;
+            text-align:center;
             font-size: 1.32vw;
             padding-bottom: 1%;
             width: 100%;
@@ -295,7 +317,7 @@
 
 
         #myBtn {
-            top:80%;
+            top: 80%;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.8vw;
             font-weight: bold;
@@ -304,14 +326,15 @@
             background-color: rgba(255,255,255,0);
             color: black;
             border-color: #99CCFF;
-            padding-top: 3%;
-            padding-bottom: 3%;
-            padding-left: 6%;
-            padding-right: 6%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            padding-left: 3%;
+            padding-right: 3%;
             border-radius: 16px;
             box-shadow: -2px 1px #525151, -0.5px 0.5px #525151, -0.5px 0.5px #525151;
             transition: background-color 0.5s ease;
         }
+
             #myBtn:hover {
                 background-color: rgba(176, 169, 169,0.80);
             }
@@ -320,7 +343,6 @@
             height: 100%;
             width: 100%;
         }
-
     </style>
 </head>
 <!--------------------------------------------START OF OBJ CREATION------------------------------------------------------->
@@ -381,7 +403,7 @@
             "#ShutDownSTEM: A reflection on racial inequities in STEM",
             "The Photoelectric Effect                                 "];
         blog_html = ["oakland.html", "shutdown.html", "photoelectric.html"];
- 
+
         function prev_blog() {
             // if 0 at beg
             if (counter > 0) {
