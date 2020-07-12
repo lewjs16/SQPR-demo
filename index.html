@@ -61,7 +61,9 @@
                 .navbar a.active {
                     background-color: rgba(255, 244, 117,1);
                     color: rgba(48, 48, 45,1);
+                    border-radius: 16px;
                 }
+
 
         #logo {
             position: absolute;
@@ -76,7 +78,7 @@
         .image-wrapper {
             position: relative;
             text-align: center;
-            top: 9%;
+            top: 7%;
             height: auto;
             width: 100%;
         }
@@ -142,7 +144,7 @@
             text-align: center;
             width: 20%;
             height: auto;
-            top: 9%;
+            top: 7%;
             left: 21%;
         }
 
@@ -238,6 +240,7 @@
             height: 100%;
             width: 100%;
         }
+
     </style>
 </head>
 <!--------------------------------------------START OF OBJ CREATION------------------------------------------------------->
@@ -250,7 +253,7 @@
         <div class="navbar">
             <a href="#">HOME</a>
             <a href="#">EDUCATION</a>
-            <a class="active" href="#">BLOGS</a>
+            <a class="active" id="dropdown" href="#">BLOGS</a>
             <a href="#">PUBLICATIONS</a>
             <a href="#">RESEARCH</a>
             <a href="#">SUPPORT</a>
@@ -259,17 +262,16 @@
             <a href="#">CONTACT</a>
         </div>
     </div>
-
+   
     <img src="images/umich_logo.png" id="logo" />
     <div class="top-left" id="blog-header">RECENT HIGHLIGHTS</div>
-
 
     <!-------------------------------------IMAGE/BLOG BLOCK------------------------------------------------------------>
     <div class="image-wrapper" , display: inline-table>
 
         <b onclick="prev_blog()" href="#" class="previous">&#8249; </b>
         <div class="blog" , display: inline-table>
-            <img src="images/bridge-background.jpg" id="blog-background">
+            <img src="images/blueprint-background.jpg" id="blog-background">
 
             <div class="centered" id="parent">
                 <p id="title-text">
@@ -284,6 +286,7 @@
         </div>
         <b onclick="next_blog()" href="#" class="next">&#8250;</b>
     </div>
+
     <!-------------------------------------SCRIPT FOR HEADER/TOP OF PAGE----------------------------------------------->
 
     <script>
