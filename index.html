@@ -76,7 +76,7 @@
         .image-wrapper {
             position: relative;
             text-align: center;
-            top: 11%;
+            top: 9%;
             height: auto;
             width: 100%;
         }
@@ -135,14 +135,14 @@
 
         /* Top left text */
         .top-left {
-            position: absolute;
+            position: relative;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 1.7vw;
             font-weight: bolder;
             text-align: center;
             width: 20%;
-            height: 5%;
-            top: 16%;
+            height: auto;
+            top: 9%;
             left: 21%;
         }
 
@@ -217,7 +217,7 @@
             display: inline-block;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.8vw;
-            font-weight:bold;
+            font-weight: bold;
             text-align: center;
             text-decoration: none;
             background-color: rgba(255,255,255,0);
@@ -228,6 +228,7 @@
             padding-left: 6%;
             padding-right: 6%;
             border-radius: 16px;
+            box-shadow: -2px 2px #525151, -1px 1px #525151, -0.5px 0.5px #525151;
         }
             #myBtn:hover {
                 background-color: rgba(176, 169, 169,0.80);
@@ -260,11 +261,12 @@
     </div>
 
     <img src="images/umich_logo.png" id="logo" />
-
     <div class="top-left" id="blog-header">RECENT HIGHLIGHTS</div>
-    <!-------------------------------------IMAGE/BLOG BLOCK------------------------------------------------------------>
 
+
+    <!-------------------------------------IMAGE/BLOG BLOCK------------------------------------------------------------>
     <div class="image-wrapper" , display: inline-table>
+
         <b onclick="prev_blog()" href="#" class="previous">&#8249; </b>
         <div class="blog" , display: inline-table>
             <img src="images/bridge-background.jpg" id="blog-background">
