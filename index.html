@@ -80,20 +80,92 @@
         .image-wrapper {
             position: relative;
             text-align: center;
-            top: 7%;
+            top: 42%;
+            left:-2%;
             height: auto;
             width: 100%;
+            
         }
 
         /*Recent Highlights image Boarder*/
-        #blog-background {
+        .smoother {
             display: inline-block;
-            border: 4px solid #f1f1f1;
-            vertical-align: bottom;
-            margin-left: auto;
-            margin-right: auto;
-            height: 25%;
+            height: auto;
             width: 99%; /*this is inside of div class blog*/
+
+        }
+
+            .smoother img {
+                position: absolute;
+                text-align:center;
+                top: 25%;
+                z-index: -1;
+                border: 4px solid #f1f1f1;
+                left:18%;
+                height: 65%;
+                width: 65%;
+                this is inside of div class blog -webkit-animation-name: fade;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-duration: 8s;
+                animation-name: fade;
+                animation-iteration-count: infinite;
+                animation-duration: 8s;
+            }
+
+        @-webkit-keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 1;
+            }
+
+            53% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 1;
+            }
+
+            53% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+      
+
+        #f2 {
+            -webkit-animation-delay: -4s;
+            
+        }
+
+        #f3 {
+            -webkit-animation-delay: -2s;
+           
         }
 
         /*Style Previous & Next Button*/
@@ -119,7 +191,7 @@
             position: absolute;
             box-shadow: -1px 1px #878686, -0.5px 0.5px #878686, -0.2px 0.2px #878686;
             transition: background-color 0.5s ease;
-            top: 50%;
+            top: 5%;
             left: 16%;
         }
 
@@ -127,15 +199,15 @@
             position: absolute;
             box-shadow: -1px 1px #878686, -0.5px 0.5px #878686, -0.2px 0.2px #878686;
             transition: background-color 0.5s ease;
-            top: 50%;
-            left: 81%;
+            top: 5%;
+            left: 87%;
         }
         /*-----------------------------------------------------------------------------------------*/
         /*Style Blogs*/
         .blog {
             position: relative;
             display: inline-block;
-            text-align: center;
+            /*text-align: center;*/
             width: 60%;
             height: auto;
             top: 0%; /*inside of something*/
@@ -156,9 +228,11 @@
 
         /* Centered text */
         .centered {
-            position: absolute;
+            display:inline-block;
+            position:relative;
             transform: translate(-50%, -50%);
             font-family: Arial, Helvetica, sans-serif;
+            text-align:center;
             font-weight: 600;
             background-color: rgba(241, 241, 241,0.80);
             top: 50%;
@@ -223,7 +297,7 @@
 
 
         #myBtn {
-            display: inline-block;
+            top:80%;
             font-family: Arial, Helvetica, sans-serif;
             font-size: 0.8vw;
             font-weight: bold;
@@ -270,7 +344,7 @@
             <a href="#">CONTACT</a>
         </div>
     </div>
-   
+
     <img src="images/umich_logo.png" id="logo" />
     <div class="top-left" id="blog-header">RECENT HIGHLIGHTS</div>
 
@@ -279,7 +353,8 @@
 
         <b onclick="prev_blog()" href="#" class="previous">&#8249; </b>
         <div class="blog" , display: inline-table>
-            <img src="images/blueprint-background.jpg" id="blog-background">
+
+
 
             <div class="centered" id="parent">
                 <p id="title-text">
@@ -295,14 +370,23 @@
         <b onclick="next_blog()" href="#" class="next">&#8250;</b>
     </div>
 
+    <div class="smoother">
+        <img src="images/bridge-background.jpg" id="f1">
+        <img src="images/blueprint-background.jpg" id="f2">
+        <img src="images/wire-background.jpg" id="f3">
+    </div>
+
     <!-------------------------------------SCRIPT FOR HEADER/TOP OF PAGE----------------------------------------------->
 
     <script>
         var counter = 1;
+        var picCount = 0;
         blog_titles = ["Oakland 2020: Thoughts on a Virtual Conference by a Michigan EECS PhD Student",
             "#ShutDownSTEM: A reflection on racial inequities in STEM",
             "The Photoelectric Effect"];
-        blog_html = ["oakland.html", "shutdown.html", "photoelectric.html"]
+        blog_html = ["oakland.html", "shutdown.html", "photoelectric.html"];
+        //images = ['images/bridge-background.jpg','images/blueprint-background.jpg',  'images/wire-background.jpg'];
+
 
         function prev_blog() {
             // if 0 at beg
