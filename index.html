@@ -82,7 +82,7 @@
             text-align: center;
             align-content: center;
             align-items: center;
-            top: 27%;
+            top: 12vw;
             left: -2%;
             height: 65%;
             width: 100%;
@@ -98,7 +98,7 @@
             .smoother img {
                 position: absolute;
                 text-align: center;
-                top: 27%;
+                top: 12vw;
                 z-index: -1;
                 border: 4px solid #f1f1f1;
                 left: 18%;
@@ -189,7 +189,6 @@
             transition: background-color 0.5s ease;
             top: 15vw;
             left: 16.5%;
-            /*transform: translate(0%,50%);*/
         }
 
         .next {
@@ -197,26 +196,24 @@
             box-shadow: -1px 1px #878686, -0.5px 0.5px #878686, -0.2px 0.2px #878686;
             transition: background-color 0.5s ease;
             top: 15vw;
-            /*top: 50%;*/
             right:11%;
-            /*transform: translate(0%,50%);*/
         }
+
         /*-----------------------------------------------------------------------------------------*/
         /*Style Blogs*/
         .blog {
             position: relative;
-            top: 3vw;
-            left: 2.5%;
             display: inline-block;
             text-align: center;
-            vertical-align: middle;
-            width: 55%;
-            height: 25vw;
-            /* border: 4px solid #555;*/
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 600;
             background-color: rgba(241, 241, 241,0.80);
             box-shadow: -3px 3px lightgrey, -2px 2px lightgrey, -1px 1px lightgrey;
+            top: 3vw;
+            left: 2.5%;
+            vertical-align: middle;
+            width: 55%;
+            height: 25vw;
             overflow: hidden;
         }
 
@@ -229,40 +226,18 @@
             text-align: center;
             width: 20%;
             height: auto;
-            top: 7%;
+            top: 3vw;
             left: 21%;
+            padding-bottom:1vw;
         }
 
         .centered {
             position: fixed;
             text-align: center;
             padding-top: 10vw;
-            /* top: 50%;
-            left:50%;*/
             width: 55%;
             height: auto;
-            /* transform: translate(-49%,31%);*/
-            /* border: 4px solid red;*/
         }
-
-        /* Centered text */
-        /*.centered {*/
-        /*display: inline-block;*/
-        /*position: relative;
-            margin:0;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            font-weight: 600;
-            background-color: rgba(241, 241, 241,0.80);
-            padding-left: 30%;
-            padding-right: 30%;
-            padding-top: 15%;
-            padding-bottom: 15%;
-            width: 55%;
-            height: auto;
-            box-shadow: -3px 3px lightgrey, -2px 2px lightgrey, -1px 1px lightgrey;
-            overflow: hidden;
-        }*/
 
         #title-text {
             position: relative;
@@ -280,8 +255,8 @@
             position: fixed;
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            z-index: 1; /* Sit on top */
-            padding-top: 5%; /* Location of the box */
+            z-index: 1; 
+            padding-top: 5%;
             left: 0;
             top: 0;
             width: 100%;
@@ -313,7 +288,6 @@
                 text-decoration: none;
                 cursor: pointer;
             }
-
 
         #myBtn {
             top: 80%;
@@ -369,10 +343,8 @@
 
     <!-------------------------------------IMAGE/BLOG BLOCK------------------------------------------------------------>
     <div class="image-wrapper" , display: inline-table>
-
         <b onclick="prev_blog()" href="#" class="previous">&#8249; </b>
         <div class="blog" , display: inline-table>
-
             <div class="centered" id="parent">
                 <p id="title-text">
                     #ShutDownSTEM: A reflection on racial inequities in STEM
@@ -394,7 +366,6 @@
     </div>
 
     <!-------------------------------------SCRIPT FOR HEADER/TOP OF PAGE----------------------------------------------->
-
     <script>
         var counter = 1;
         var picCount = 0;
